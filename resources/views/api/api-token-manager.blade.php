@@ -1,4 +1,4 @@
-<div>
+<div class="grid gap-10">
     <!-- Generate API Token -->
     <x-form-section submit="createApiToken">
         <x-slot name="title">
@@ -46,8 +46,6 @@
     </x-form-section>
 
     @if ($this->user->tokens->isNotEmpty())
-        <x-section-border />
-
         <!-- Manage API Tokens -->
         <div class="mt-10 sm:mt-0">
             <x-action-section>
@@ -58,13 +56,13 @@
                 <x-slot name="description">
                     {{ __('You may delete any of your existing tokens if they are no longer needed.') }}
                 </x-slot>
-
+                
                 <!-- API Token List -->
                 <x-slot name="content">
                     <div class="space-y-6">
                         @foreach ($this->user->tokens->sortBy('name') as $token)
                             <div class="flex items-center justify-between">
-                                <div class="break-all dark:text-white">
+                                <div>
                                     {{ $token->name }}
                                 </div>
 
@@ -112,9 +110,9 @@
         </x-slot>
 
         <x-slot name="footer">
-            <x-secondary-button wire:click="$set('displayingToken', false)" wire:loading.attr="disabled">
+            <x-button variant="info" wire:click="$set('displayingToken', false)" wire:loading.attr="disabled">
                 {{ __('Close') }}
-            </x-secondary-button>
+            </x-button>
         </x-slot>
     </x-dialog-modal>
 
@@ -136,9 +134,9 @@
         </x-slot>
 
         <x-slot name="footer">
-            <x-secondary-button wire:click="$set('managingApiTokenPermissions', false)" wire:loading.attr="disabled">
+            <x-button variant="info" wire:click="$set('managingApiTokenPermissions', false)" wire:loading.attr="disabled">
                 {{ __('Cancel') }}
-            </x-secondary-button>
+            </x-button>
 
             <x-button class="ml-3" wire:click="updateApiToken" wire:loading.attr="disabled">
                 {{ __('Save') }}
@@ -156,14 +154,14 @@
             {{ __('Are you sure you would like to delete this API token?') }}
         </x-slot>
 
-        <x-slot name="footer">
-            <x-secondary-button wire:click="$toggle('confirmingApiTokenDeletion')" wire:loading.attr="disabled">
+         <x-slot name="footer">
+            <x-button variant="info" wire:click="$toggle('confirmingApiTokenDeletion')" wire:loading.attr="disabled">
                 {{ __('Cancel') }}
-            </x-secondary-button>
+            </x-button>
 
-            <x-danger-button class="ml-3" wire:click="deleteApiToken" wire:loading.attr="disabled">
+            <x-button variant="danger" class="ml-3" wire:click="deleteApiToken" wire:loading.attr="disabled">
                 {{ __('Delete') }}
-            </x-danger-button>
+            </x-button>
         </x-slot>
     </x-confirmation-modal>
 </div>

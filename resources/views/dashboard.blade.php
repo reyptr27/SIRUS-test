@@ -1,7 +1,10 @@
 <x-app-layout>
+
+    @section('title', 'Dashboard')
+
     <x-slot name="header">
         <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-            <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+            <h2 class="text-xl font-semibold leading-tight">
                 {{ __('Dashboard') }}
             </h2>
             <x-button target="_blank" href="https://github.com/reyptr27/SIRUS" variant="black"
@@ -16,7 +19,11 @@
         <div>You're logged in!</div>
 
         <div>
-            <a href="https://jetstream.laravel.com/2.x/introduction.html" class="text-blue-600 hover:underline" target="_blank">
+            <a 
+                href="https://jetstream.laravel.com/2.x/introduction.html"
+                class="text-blue-600 hover:underline"
+                target="_blank"
+            >
                 Jetstream Documentation
             </a>
         </div>
