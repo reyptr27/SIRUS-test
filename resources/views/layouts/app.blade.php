@@ -61,5 +61,17 @@
         @stack('modals')
 
         @livewireScripts
+
+        <!-- Extra JS -->
+        <script>
+            let docTitle = document.title;
+            window.addEventListener("blur", () => {
+                document.title = "{{ __("Please Comeback! 😭") }}";
+            });
+
+            window.addEventListener("focus", () => {
+                document.title = docTitle;
+            });
+        </script>
     </body>
 </html>

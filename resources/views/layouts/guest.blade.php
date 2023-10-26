@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'SIRUS') }}</title>
+        <title>{{ config('app.name', 'SIRUS') }} | @yield('title')</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,5 +34,17 @@
         </div>
 
         @livewireScripts
+
+        <!-- Extra JS -->
+        <script>
+            let docTitle = document.title;
+            window.addEventListener("blur", () => {
+                document.title = "{{ __("Please Comeback! 😭") }}";
+            });
+
+            window.addEventListener("focus", () => {
+                document.title = docTitle;
+            });
+        </script>
     </body>
 </html>
