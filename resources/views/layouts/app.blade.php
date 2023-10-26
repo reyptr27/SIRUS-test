@@ -28,7 +28,6 @@
                 <!-- Sidebar -->
                 <x-sidebar.sidebar />
 
-                
                 <!-- Page Wrapper -->
                 <div class="flex flex-col min-h-screen" :class="{ 
                         'lg:ml-64': isSidebarOpen,
@@ -37,12 +36,12 @@
                     
                     @livewire('navigation-menu')
 
-                    {{-- <x-mobile-bottom-nav /> --}}
+                    <x-mobile-bottom-nav />
 
                     <!-- Page Heading -->
                     @if (isset($header))
-                        <header class="bg-white dark:bg-gray-800 shadow">
-                            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                        <header>
+                            <div class="px-4 py-6 mx-auto max-w-7xl w-full sm:px-6 lg:px-8">
                                 {{ $header }}
                             </div>
                         </header>
