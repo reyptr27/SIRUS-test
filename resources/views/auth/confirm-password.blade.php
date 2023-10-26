@@ -1,27 +1,37 @@
 <x-guest-layout>
-    <x-authentication-card>
-        <x-slot name="logo">
-            <x-authentication-card-logo />
-        </x-slot>
 
+    @section('title', 'Confirm Password')
+
+    <x-authentication-card>
         <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
             {{ __('This is a secure area of the application. Please confirm your password before continuing.') }}
         </div>
 
-        <x-validation-errors class="mb-4" />
+        <  <!-- Validation Errors -->
+        <x-authentication-validation-errors class="mb-4" :errors="$errors" />
 
         <form method="POST" action="{{ route('password.confirm') }}">
             @csrf
 
-            <div>
-                <x-label for="password" value="{{ __('Password') }}" />
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" autofocus />
-            </div>
+            <div class="grid gap-6">
+                <!-- Password -->
+                <div class="space-y-2">
+                    <x-label for="password" :value="__('Password')" />
 
-            <div class="flex justify-end mt-4">
-                <x-button class="ml-4">
-                    {{ __('Confirm') }}
-                </x-button>
+                    <x-input-with-icon-wrapper>
+                        <x-slot name="icon">
+                            <x-heroicon-o-lock-closed aria-hidden="true" class="w-5 h-5" />
+                        </x-slot>
+                        <x-input withicon id="password" class="block w-full mt-1" type="password" name="password"
+                            required autocomplete="current-password" placeholder="{{ __('Password') }}" />
+                    </x-input-with-icon-wrapper>
+                </div>
+
+                <div>
+                    <x-button class="justify-center w-full">
+                        {{ __('Confirm') }}
+                    </x-button>
+                </div>
             </div>
         </form>
     </x-authentication-card>
