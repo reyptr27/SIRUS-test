@@ -2,7 +2,11 @@
     <!-- Logo -->
     <a href="{{ route('dashboard') }}" class="inline-flex items-center gap-2">
         <x-application-logo aria-hidden="true" class="w-10 h-auto" />
-        <span class="sr-only">SIRUS</span>
+        {{-- <span class="sr-only">SIRUS Logo</span> --}}
+        
+        <span x-show="isSidebarOpen || isSidebarHovered" aria-hidden="true" class="text-3xl text-gray-700 text-transform: uppercase; font-bold tracking-tight leading-none whitespace-nowrap dark:text-white">
+            SIRUS<small class="text-sm text-gray-700 text-transform: uppercase; font-thin tracking-tight leading-none whitespace-nowrap dark:text-white"> v2.0</small>
+        </span>
     </a>
 
     <!-- Toggle button -->
