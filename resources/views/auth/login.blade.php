@@ -21,7 +21,7 @@
                             <x-heroicon-o-mail aria-hidden="true" class="w-5 h-5" />
                         </x-slot>
                         <x-input withicon id="email" class="block w-full" type="email" name="email"
-                            :value="old('email')" placeholder="{{ __('Email') }}" required autofocus />
+                            :value="old('email')" placeholder="{{ __('Email') }}" required autofocus autocomplete="email" />
                     </x-input-with-icon-wrapper>
                 </div>
 

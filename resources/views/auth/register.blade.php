@@ -18,7 +18,7 @@
                             <x-heroicon-o-user aria-hidden="true" class="w-5 h-5" />
                         </x-slot>
                         <x-input withicon id="name" class="block w-full" type="text" name="name" :value="old('name')"
-                            required autofocus placeholder="{{ __('Name') }}" />
+                            required autofocus placeholder="{{ __('Name') }}" autocomplete="name" />
                     </x-input-with-icon-wrapper>
                 </div>
 
@@ -30,7 +30,7 @@
                             <x-heroicon-o-mail aria-hidden="true" class="w-5 h-5" />
                         </x-slot>
                         <x-input withicon id="email" class="block w-full" type="email" name="email"
-                            :value="old('email')" required placeholder="{{ __('Email') }}" />
+                            :value="old('email')" required placeholder="{{ __('Email') }}" autocomplete="email" />
                     </x-input-with-icon-wrapper>
                 </div>
 
