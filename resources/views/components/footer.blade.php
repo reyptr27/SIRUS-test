@@ -1,4 +1,4 @@
-<footer class="flex-shrink-0 px-6 py-4">
+<footer class="flex-shrink-0 px-6 py-4 bg-white dark:bg-dark-eval-1">
     <p class="flex items-center justify-end gap-1 text-sm text-gray-600 dark:text-gray-400">
         <span>&#169; @currentYear - {{ __('Made with') }}</span>
         <span>

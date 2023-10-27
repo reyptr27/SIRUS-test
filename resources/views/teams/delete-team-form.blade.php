@@ -33,9 +33,9 @@
                     {{ __('Cancel') }}
                 </x-button>
 
-                <x-danger-button class="ml-3" wire:click="deleteTeam" wire:loading.attr="disabled">
+                <x-button variant="danger" class="ml-3" wire:click="deleteTeam" wire:loading.attr="disabled">
                     {{ __('Delete Team') }}
-                </x-danger-button>
+                </x-button>
             </x-slot>
         </x-confirmation-modal>
     </x-slot>
