@@ -10,8 +10,10 @@
     <x-slot name="form">
         <!-- Team Owner Information -->
         <div class="col-span-6">
-            <x-label value="{{ __('Team Owner') }}" />
+            <x-span value="{{ __('Team Owner') }}" />
 
+            <br>
+            
             <div class="flex items-center mt-2">
                 <img class="w-12 h-12 rounded-full object-cover" src="{{ $team->owner->profile_photo_url }}" alt="{{ $team->owner->name }}">
 
@@ -30,7 +32,8 @@
                         type="text"
                         class="mt-1 block w-full"
                         wire:model="state.name"
-                        :disabled="! Gate::check('update', $team)" />
+                        :disabled="! Gate::check('update', $team)" 
+                        autocomplete="off" />
 
             <x-input-error for="name" class="mt-2" />
         </div>
