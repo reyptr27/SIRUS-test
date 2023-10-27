@@ -25,7 +25,7 @@
                 <x-footer />
             </div>
 
-            <div class="fixed top-10 right-10">
+            <div class="fixed top-3 right-3 sm:top-10 sm:right-10">
                 <x-button type="button" iconOnly variant="secondary" srText="Toggle dark mode" @click="toggleTheme">
                     <x-heroicon-o-moon x-show="!isDarkMode" aria-hidden="true" class="w-6 h-6" />
                     <x-heroicon-o-sun x-show="isDarkMode" aria-hidden="true" class="w-6 h-6" />
