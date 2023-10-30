@@ -1,6 +1,6 @@
 <x-guest-layout>
 
-    @section('title', 'Register')
+    @section('title', __('Register'))
 
     <x-authentication-card>
         <!-- Validation Errors -->
@@ -10,6 +10,18 @@
             @csrf
 
             <div class="grid gap-6">
+                <!-- NIK -->
+                <div class="space-y-2">
+                    <x-label for="nik" :value="__('NIK')" />
+                    <x-input-with-icon-wrapper>
+                        <x-slot name="icon">
+                            <x-heroicon-o-identification aria-hidden="true" class="w-5 h-5" />
+                        </x-slot>
+                        <x-input withicon id="nik" class="block w-full" type="text" name="nik" :value="old('nik')"
+                            required autofocus placeholder="NIK" autocomplete="off" />
+                    </x-input-with-icon-wrapper>
+                </div>
+
                 <!-- Name -->
                 <div class="space-y-2">
                     <x-label for="name" :value="__('Name')" />
@@ -19,6 +31,18 @@
                         </x-slot>
                         <x-input withicon id="name" class="block w-full" type="text" name="name" :value="old('name')"
                             required autofocus placeholder="{{ __('Name') }}" autocomplete="name" />
+                    </x-input-with-icon-wrapper>
+                </div>
+
+                <!-- Username -->
+                <div class="space-y-2">
+                    <x-label for="username" :value="__('Username')" />
+                    <x-input-with-icon-wrapper>
+                        <x-slot name="icon">
+                            <x-heroicon-o-user-circle aria-hidden="true" class="w-5 h-5" />
+                        </x-slot>
+                        <x-input withicon id="username" class="block w-full" type="text" name="username" :value="old('username')"
+                            required autofocus placeholder="{{ __('Username') }}" autocomplete="off" />
                     </x-input-with-icon-wrapper>
                 </div>
 

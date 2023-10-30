@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Laravel\Fortify\Fortify;
 use App\Actions\Jetstream\AddTeamMember;
 use App\Actions\Jetstream\CreateTeam;
 use App\Actions\Jetstream\DeleteTeam;
@@ -36,6 +40,26 @@ class JetstreamServiceProvider extends ServiceProvider
         Jetstream::removeTeamMembersUsing(RemoveTeamMember::class);
         Jetstream::deleteTeamsUsing(DeleteTeam::class);
         Jetstream::deleteUsersUsing(DeleteUser::class);
+
+        Fortify::authenticateUsing(function (Request $request) {
+            $user = User::where('email', $request->identity)
+                ->orWhere('username', $request->identity)
+                ->first();
+
+            if ($user &&
+                Hash::check($request->password, $user->password)) {
+                return $user;
+            }
+        });
+
+        Fortify::confirmPasswordsUsing(function (User $identity, string $password) {
+
+            $user = User::where('email', $identity->email)
+                ->orWhere('username', $identity->username)
+                ->first();
+
+            return Hash::check($password, $user->password);
+        });
     }
 
     /**

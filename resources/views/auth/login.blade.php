@@ -1,6 +1,6 @@
 <x-guest-layout>
 
-    @section('title', 'Login')
+    @section('title', __('Login'))
 
     <x-authentication-card>
         <!-- Session Status -->
@@ -12,16 +12,16 @@
         <form method="POST" action="{{ route('login') }}">
             @csrf
             <div class="grid gap-6">
-                <!-- Email Address -->
+                <!-- Identity (username or email) -->
                 <div class="space-y-2">
-                    <x-label for="email" :value="__('Email')" />
+                    <x-label for="identity" :value="__('Username / Email')" />
 
                     <x-input-with-icon-wrapper>
                         <x-slot name="icon">
-                            <x-heroicon-o-mail aria-hidden="true" class="w-5 h-5" />
+                            <x-heroicon-o-identification aria-hidden="true" class="w-5 h-5" />
                         </x-slot>
-                        <x-input withicon id="email" class="block w-full" type="email" name="email"
-                            :value="old('email')" placeholder="{{ __('Email') }}" required autofocus autocomplete="email" />
+                        <x-input withicon id="identity" class="block w-full" type="text" name="identity"
+                            :value="old('identity')" placeholder="{{ __('Username / Email') }}" required autofocus autocomplete="off" />
                     </x-input-with-icon-wrapper>
                 </div>
 
