@@ -30,7 +30,7 @@
 
             <x-input id="name"
                         type="text"
-                        class="mt-1 block w-full"
+                        class="mt-1 block w-full {{ Gate::check('update', $team) ? '' : 'bg-disable-light dark:bg-disable-dark' }}"
                         wire:model="state.name"
                         :disabled="! Gate::check('update', $team)" 
                         autocomplete="off" />

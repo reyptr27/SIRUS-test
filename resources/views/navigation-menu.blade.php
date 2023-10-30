@@ -20,7 +20,7 @@
         </x-button>
 
         <!-- Teams Dropdown -->
-        @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
+        @if (Laravel\Jetstream\Jetstream::hasTeamFeatures() && Auth::user()->currentTeam != null)
             <x-dropdown align="right" width="60">
                 <x-slot name="trigger">
                     <button type="button" class="inline-flex items-center rounded-md p-2 text-sm font-medium text-gray-500 transition duration-150 ease-in-out hover:text-gray-700 focus:outline-none focus:ring focus:ring-purple-500 focus:ring-offset-1 focus:ring-offset-white dark:focus:ring-offset-dark-eval-1 dark:text-gray-400 dark:hover:text-gray-200">
@@ -62,7 +62,7 @@
                         @endforeach
                     </div>
                 </x-slot>
-            </x-dropdown>
+            </x-dropdown>       
         @endif
         
      <!-- Settings Dropdown -->

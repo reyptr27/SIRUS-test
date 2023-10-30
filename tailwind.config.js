@@ -29,6 +29,10 @@ export default {
                     "eval-3": "#2C3142",
                 },
                 cyan: colors.cyan,
+                disable: {
+                    light: "#E9ECEF",
+                    dark: "#2C3142",
+                },
             },
         },
     },
