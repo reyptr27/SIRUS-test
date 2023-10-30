@@ -56,6 +56,24 @@
             </div>
         @endif
 
+        <!-- NIK -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="nik" value="NIK" />
+            <x-input id="nik" type="text" class="mt-1 block w-full bg-disable-light dark:bg-disable-dark" 
+            wire:model="state.nik" required 
+            autocomplete="nik" readonly disabled />
+            <x-input-error for="nik" class="mt-2" />
+        </div>
+
+        <!-- Username -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="username" value="{{ __('Username') }}" />
+            <x-input id="username" type="text" class="mt-1 block w-full bg-disable-light dark:bg-disable-dark" 
+            wire:model="state.username" required 
+            autocomplete="username" readonly disabled />
+            <x-input-error for="username" class="mt-2" />
+        </div>
+
         <!-- Name -->
         <div class="col-span-6 sm:col-span-4">
             <x-label for="name" value="{{ __('Name') }}" />

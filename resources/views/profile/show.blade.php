@@ -1,10 +1,10 @@
 <x-app-layout>
 
-    @section('title', 'Profile Setting')
+    @section('title',  __('Profile Settings'))
 
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight">
-            {{ __('Profile') }}
+            {{ __('Profile Settings') }}
         </h2>
     </x-slot>
 
