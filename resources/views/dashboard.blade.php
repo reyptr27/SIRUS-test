@@ -1,6 +1,6 @@
 <x-app-layout>
 
-    @section('title', 'Dashboard')
+    @section('title', __('Dashboard'))
 
     <x-slot name="header">
         <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">

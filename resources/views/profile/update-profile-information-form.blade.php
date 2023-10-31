@@ -59,7 +59,7 @@
         <!-- NIK -->
         <div class="col-span-6 sm:col-span-4">
             <x-label for="nik" value="NIK" />
-            <x-input id="nik" type="text" class="mt-1 block w-full bg-disable-light dark:bg-disable-dark" 
+            <x-input id="nik" type="text" class="form-input mt-1 block w-full bg-disable-light dark:bg-disable-dark" 
             wire:model="state.nik" required 
             autocomplete="nik" readonly disabled />
             <x-input-error for="nik" class="mt-2" />
@@ -68,7 +68,7 @@
         <!-- Username -->
         <div class="col-span-6 sm:col-span-4">
             <x-label for="username" value="{{ __('Username') }}" />
-            <x-input id="username" type="text" class="mt-1 block w-full bg-disable-light dark:bg-disable-dark" 
+            <x-input id="username" type="text" class="form-input mt-1 block w-full bg-disable-light dark:bg-disable-dark" 
             wire:model="state.username" required 
             autocomplete="username" readonly disabled />
             <x-input-error for="username" class="mt-2" />
@@ -77,14 +77,14 @@
         <!-- Name -->
         <div class="col-span-6 sm:col-span-4">
             <x-label for="name" value="{{ __('Name') }}" />
-            <x-input id="name" type="text" class="mt-1 block w-full" wire:model="state.name" required autocomplete="name" />
+            <x-input id="name" type="text" class="form-input mt-1 block w-full" wire:model="state.name" required autocomplete="name" />
             <x-input-error for="name" class="mt-2" />
         </div>
 
         <!-- Email -->
         <div class="col-span-6 sm:col-span-4">
             <x-label for="email" value="{{ __('Email') }}" />
-            <x-input id="email" type="email" class="mt-1 block w-full" wire:model="state.email" required autocomplete="username" />
+            <x-input id="email" type="email" class="form-input mt-1 block w-full" wire:model="state.email" required autocomplete="username" />
             <x-input-error for="email" class="mt-2" />
 
             @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::emailVerification()) && ! $this->user->hasVerifiedEmail())

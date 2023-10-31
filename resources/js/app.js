@@ -1,6 +1,10 @@
 import "./bootstrap";
 import PerfectScrollbar from "perfect-scrollbar";
 
+//PoweGrid
+import "./../../vendor/power-components/livewire-powergrid/dist/powergrid";
+import "./../../vendor/power-components/livewire-powergrid/dist/tailwind.css";
+
 window.PerfectScrollbar = PerfectScrollbar;
 
 document.addEventListener("alpine:init", () => {

@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+//App Controllers
+use App\Http\Controllers\UserController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,4 +28,6 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::get('/user', [UserController::class, 'index'])->name('user-index');
 });

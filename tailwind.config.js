@@ -13,6 +13,15 @@ export default {
         "./vendor/laravel/jetstream/**/*.blade.php",
         "./storage/framework/views/*.php",
         "./resources/views/**/*.blade.php",
+        //PoweGrid
+        "./app/Http/Livewire/**/*Table.php",
+        "./vendor/power-components/livewire-powergrid/resources/views/**/*.php",
+        "./vendor/power-components/livewire-powergrid/src/Themes/Tailwind.php",
+    ],
+
+    presets: [
+        //PowerGrid
+        require("./vendor/power-components/livewire-powergrid/tailwind.config.js"),
     ],
 
     theme: {
@@ -29,13 +38,21 @@ export default {
                     "eval-3": "#2C3142",
                 },
                 cyan: colors.cyan,
+                //Custom
                 disable: {
                     light: "#E9ECEF",
                     dark: "#2C3142",
                 },
+                //PoweGrid
+                "pg-primary": colors.gray,
             },
         },
     },
 
-    plugins: [forms, typography],
+    plugins: [
+        require("@tailwindcss/forms")({
+            strategy: "class",
+        }),
+        typography,
+    ],
 };

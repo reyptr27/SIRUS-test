@@ -20,8 +20,8 @@
                         <x-slot name="icon">
                             <x-heroicon-o-identification aria-hidden="true" class="w-5 h-5" />
                         </x-slot>
-                        <x-input withicon id="identity" class="block w-full" type="text" name="identity"
-                            :value="old('identity')" placeholder="{{ __('Username / Email') }}" required autofocus autocomplete="off" />
+                        <x-input withicon id="identity" class="form-input block w-full" type="text" name="identity"
+                            :value="old('identity')" placeholder="{{ __('Username / Email') }}" required autofocus autocomplete="username || email" />
                     </x-input-with-icon-wrapper>
                 </div>
 
@@ -33,7 +33,7 @@
                         <x-slot name="icon">
                             <x-heroicon-o-lock-closed aria-hidden="true" class="w-5 h-5" />
                         </x-slot>
-                        <x-input withicon id="password" class="block w-full" type="password" name="password" required
+                        <x-input withicon id="password" class="form-input block w-full" type="password" name="password" required
                             autocomplete="current-password" placeholder="{{ __('Password') }}" />
                     </x-input-with-icon-wrapper>
                 </div>

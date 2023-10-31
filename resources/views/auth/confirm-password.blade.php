@@ -22,7 +22,7 @@
                         <x-slot name="icon">
                             <x-heroicon-o-lock-closed aria-hidden="true" class="w-5 h-5" />
                         </x-slot>
-                        <x-input withicon id="password" class="block w-full mt-1" type="password" name="password"
+                        <x-input withicon id="password" class="form-input block w-full mt-1" type="password" name="password"
                             required autocomplete="current-password" placeholder="{{ __('Password') }}" />
                     </x-input-with-icon-wrapper>
                 </div>

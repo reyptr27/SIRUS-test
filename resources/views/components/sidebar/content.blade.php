@@ -23,14 +23,14 @@
             :active="request()->routeIs('buttons.text-icon')" />
     </x-sidebar.dropdown> --}}
     
-    <x-sidebar.dropdown title="Buttons" :active="Str::startsWith(request()->route()->uri(), 'buttons')">
+    <x-sidebar.dropdown title="Management User" :active="Str::startsWith(request()->route()->uri(), 'user')">
         <x-slot name="icon">
-            <x-heroicon-o-view-grid class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+            <x-heroicon-o-user-group class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
         </x-slot>
 
-        <x-sidebar.sublink title="Text button" href="#"
-            :active="request()->routeIs('buttons.text')" />
-        <x-sidebar.sublink title="Icon button" href="#"
+        <x-sidebar.sublink title="Users" href="{{ route('user-index') }}"
+            :active="request()->routeIs('user-index')" />
+        <x-sidebar.sublink title="Roles" href="#"
             :active="request()->routeIs('buttons.icon')" />
         <x-sidebar.sublink title="Text with icon" href="#"
             :active="request()->routeIs('buttons.text-icon')" />

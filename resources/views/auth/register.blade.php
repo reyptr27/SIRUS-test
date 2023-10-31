@@ -17,7 +17,7 @@
                         <x-slot name="icon">
                             <x-heroicon-o-identification aria-hidden="true" class="w-5 h-5" />
                         </x-slot>
-                        <x-input withicon id="nik" class="block w-full" type="text" name="nik" :value="old('nik')"
+                        <x-input withicon id="nik" class="form-input block w-full" type="text" name="nik" :value="old('nik')"
                             required autofocus placeholder="NIK" autocomplete="off" />
                     </x-input-with-icon-wrapper>
                 </div>
@@ -29,7 +29,7 @@
                         <x-slot name="icon">
                             <x-heroicon-o-user aria-hidden="true" class="w-5 h-5" />
                         </x-slot>
-                        <x-input withicon id="name" class="block w-full" type="text" name="name" :value="old('name')"
+                        <x-input withicon id="name" class="form-input block w-full" type="text" name="name" :value="old('name')"
                             required autofocus placeholder="{{ __('Name') }}" autocomplete="name" />
                     </x-input-with-icon-wrapper>
                 </div>
@@ -41,7 +41,7 @@
                         <x-slot name="icon">
                             <x-heroicon-o-user-circle aria-hidden="true" class="w-5 h-5" />
                         </x-slot>
-                        <x-input withicon id="username" class="block w-full" type="text" name="username" :value="old('username')"
+                        <x-input withicon id="username" class="form-input block w-full" type="text" name="username" :value="old('username')"
                             required autofocus placeholder="{{ __('Username') }}" autocomplete="off" />
                     </x-input-with-icon-wrapper>
                 </div>
@@ -53,7 +53,7 @@
                         <x-slot name="icon">
                             <x-heroicon-o-mail aria-hidden="true" class="w-5 h-5" />
                         </x-slot>
-                        <x-input withicon id="email" class="block w-full" type="email" name="email"
+                        <x-input withicon id="email" class="form-input block w-full" type="email" name="email"
                             :value="old('email')" required placeholder="{{ __('Email') }}" autocomplete="email" />
                     </x-input-with-icon-wrapper>
                 </div>
@@ -65,7 +65,7 @@
                         <x-slot name="icon">
                             <x-heroicon-o-lock-closed aria-hidden="true" class="w-5 h-5" />
                         </x-slot>
-                        <x-input withicon id="password" class="block w-full" type="password" name="password" required
+                        <x-input withicon id="password" class="form-input block w-full" type="password" name="password" required
                             autocomplete="new-password" placeholder="{{ __('Password') }}" />
                     </x-input-with-icon-wrapper>
                 </div>
@@ -77,7 +77,7 @@
                         <x-slot name="icon">
                             <x-heroicon-o-lock-closed aria-hidden="true" class="w-5 h-5" />
                         </x-slot>
-                        <x-input withicon id="password_confirmation" class="block w-full" type="password"
+                        <x-input withicon id="password_confirmation" class="form-input block w-full" type="password"
                             name="password_confirmation" required placeholder="{{ __('Confirm Password') }}" />
                     </x-input-with-icon-wrapper>
                 </div>
