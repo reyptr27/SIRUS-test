@@ -42,7 +42,7 @@ final class UserTable extends PowerGridComponent
             Footer::make()
                 ->showPerPage($this->perPage, $this->perPageValues)
                 ->showRecordCount(mode: 'full'),
-            Responsive::make(), 
+            // Responsive::make(), 
         ];
     }
 
