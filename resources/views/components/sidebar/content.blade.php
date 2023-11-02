@@ -23,17 +23,45 @@
             :active="request()->routeIs('buttons.text-icon')" />
     </x-sidebar.dropdown> --}}
     
-    <x-sidebar.dropdown title="Management User" :active="Str::startsWith(request()->route()->uri(), 'user')">
+    @if (auth()->user()->can('user-read') || auth()->user()->can('role-read') || auth()->user()->can('permission-read') )
+        <x-sidebar.dropdown title="Manage User" 
+            :active="
+                Str::startsWith(request()->route()->uri(), 'user') || 
+                Str::startsWith(request()->route()->uri(), 'role') || 
+                Str::startsWith(request()->route()->uri(), 'permission')" >
+
+            <x-slot name="icon">
+                <x-heroicon-o-user-group class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+            </x-slot>
+
+            @can('user-read') 
+            <x-sidebar.sublink title="Users" href="{{ route('user-index') }}"
+                :active="request()->routeIs('user-index')" />
+            @endcan
+
+            @can('role-read') 
+            <x-sidebar.sublink title="Roles" href="{{ route('role-index') }}"
+                :active="request()->routeIs('role-index')" />
+            @endcan
+
+            @can('permission-read') 
+            <x-sidebar.sublink title="Permissions" href="{{ route('permission-index') }}"
+                :active="request()->routeIs('permission-index')" />
+            @endcan
+        </x-sidebar.dropdown>
+    @endif
+
+    <x-sidebar.dropdown title="Manage Organization" :active="Str::startsWith(request()->route()->uri(), '#')">
         <x-slot name="icon">
-            <x-heroicon-o-user-group class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+            <x-heroicon-o-office-building class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
         </x-slot>
 
-        <x-sidebar.sublink title="Users" href="{{ route('user-index') }}"
-            :active="request()->routeIs('user-index')" />
-        <x-sidebar.sublink title="Roles" href="#"
-            :active="request()->routeIs('buttons.icon')" />
-        <x-sidebar.sublink title="Text with icon" href="#"
-            :active="request()->routeIs('buttons.text-icon')" />
+        <x-sidebar.sublink title="Departments" href="#"
+            :active="request()->routeIs('#')" />
+        <x-sidebar.sublink title="Divisions" href="#"
+            :active="request()->routeIs('#')" />
+        <x-sidebar.sublink title="Branchs" href="#"
+            :active="request()->routeIs('#')" />
     </x-sidebar.dropdown>
        
 </x-perfect-scrollbar>

@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 //App Controllers
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\PermissionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,5 +31,10 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
+    //User
     Route::get('/user', [UserController::class, 'index'])->name('user-index');
+    //Role
+    Route::get('/role', [RoleController::class, 'index'])->name('role-index');
+    //Permission
+    Route::get('/permission', [permissionController::class, 'index'])->name('permission-index');
 });
