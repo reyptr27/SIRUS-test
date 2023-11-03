@@ -26,7 +26,7 @@ class Sirus extends Tailwind
     public function table(): Table
     {
         return Theme::table('min-w-full dark:bg-slate-800')
-            ->div('my-3 rounded-lg relative border border-pg-primary-200 dark:bg-pg-primary-700 dark:border-pg-primary-600')
+            ->div('my-3 rounded-lg block border border-pg-primary-200 dark:bg-pg-primary-700 dark:border-pg-primary-600')
             ->thead('shadow-sm rounded-t-lg bg-pg-primary-200 dark:bg-gray-900')
             ->thAction('!font-bold')
             ->tdAction('')

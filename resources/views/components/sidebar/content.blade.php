@@ -26,32 +26,32 @@
     @if (auth()->user()->can('user-read') || auth()->user()->can('role-read') || auth()->user()->can('permission-read') )
         <x-sidebar.dropdown title="Manage User" 
             :active="
-                Str::startsWith(request()->route()->uri(), 'user') || 
-                Str::startsWith(request()->route()->uri(), 'role') || 
-                Str::startsWith(request()->route()->uri(), 'permission')" >
+                Str::startsWith(request()->route()->uri(), 'users') || 
+                Str::startsWith(request()->route()->uri(), 'roles') || 
+                Str::startsWith(request()->route()->uri(), 'permissions')" >
 
             <x-slot name="icon">
                 <x-heroicon-o-user-group class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
             </x-slot>
 
             @can('user-read') 
-            <x-sidebar.sublink title="Users" href="{{ route('user-index') }}"
+            <x-sidebar.sublink title="Users" href="{{ route('users-index') }}"
                 :active="request()->routeIs('user-index')" />
             @endcan
 
             @can('role-read') 
-            <x-sidebar.sublink title="Roles" href="{{ route('role-index') }}"
+            <x-sidebar.sublink title="Roles" href="{{ route('roles-index') }}"
                 :active="request()->routeIs('role-index')" />
             @endcan
 
             @can('permission-read') 
-            <x-sidebar.sublink title="Permissions" href="{{ route('permission-index') }}"
+            <x-sidebar.sublink title="Permissions" href="{{ route('permissions-index') }}"
                 :active="request()->routeIs('permission-index')" />
             @endcan
         </x-sidebar.dropdown>
     @endif
 
-    <x-sidebar.dropdown title="Manage Organization" :active="Str::startsWith(request()->route()->uri(), '#')">
+    <x-sidebar.dropdown title="Organization" :active="Str::startsWith(request()->route()->uri(), 'buttons')">
         <x-slot name="icon">
             <x-heroicon-o-office-building class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
         </x-slot>

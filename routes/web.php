@@ -32,9 +32,9 @@ Route::middleware([
     })->name('dashboard');
 
     //User
-    Route::get('/user', [UserController::class, 'index'])->name('user-index');
+    Route::get('/users', [UserController::class, 'index'])->name('users-index');
     //Role
-    Route::get('/role', [RoleController::class, 'index'])->name('role-index');
+    Route::get('/roles', [RoleController::class, 'index'])->name('roles-index');
     //Permission
-    Route::get('/permission', [permissionController::class, 'index'])->name('permission-index');
+    Route::get('/permissions', [permissionController::class, 'index'])->name('permissions-index');
 });
